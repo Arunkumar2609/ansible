@@ -1,0 +1,12 @@
+- name: "Installing VIM"
+  apt: pkg=vim state=installed
+
+# - name:"Installing Git"
+#   apt:pkg=git state=installed
+
+# - name: "Installing required packages"
+#   apt: pkg={{ item }} state=installed
+#   with_items:
+#     - vim
+#     - mailx
+

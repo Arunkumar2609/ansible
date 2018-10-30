@@ -1,0 +1,4 @@
+#10.203.65.232 ansible_user=root
+#gsstr201 ansible_connection=ssh ansible_user=admin_gssraaru
+#[Routers]
+gsstr201	ansible_host=10.1.0.141

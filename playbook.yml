@@ -1,0 +1,23 @@
+# - hosts: all
+#   become: true
+#   roles:
+#     - basic
+- hosts: all
+  gather_facts: true
+  connection: local
+
+  tasks:
+    - name: show run
+      ios_command:
+        commands:
+          - show run
+          host: "{{ ansible_host }}"
+          username: admin_gssraaru
+          password: Azw863@123
+        register: config
+
+
+    - name: save output to /ansible/backups
+      copy: 
+        content: "{{ config.stdout[0] }}"
+        dest: "/ansible/backups/show_run_{{ inventory_hostname }}.txt"
