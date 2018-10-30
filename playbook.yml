@@ -12,8 +12,8 @@
         commands:
           - show run
           host: "{{ ansible_host }}"
-          username: admin_gssraaru
-          password: Azw863@123
+          username: 
+          password: 
         register: config
 
 
