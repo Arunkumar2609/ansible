@@ -1,7 +1,4 @@
-# - hosts: all
-#   become: true
-#   roles:
-#     - basic
+---
 - hosts: all
   gather_facts: true
 
@@ -10,9 +7,9 @@
       ios_command:
         commands:
           - show run
-        host: "{{ ansible_host }}"
-        username: "{{ ansible_user }}"
-        password: "{{ ansible_ssh_pass }}"
+          host: "{{ ansible_host }}"
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_ssh_pass }}"
         register: config
 
 
