@@ -4,7 +4,6 @@
 #     - basic
 - hosts: all
   gather_facts: true
-  connection: local
 
   tasks:
     - name: show run
