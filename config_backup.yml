@@ -4,6 +4,7 @@
   connection: local
 
   tasks:
+  
     - name: show run config
       ios_command:
         commands:
