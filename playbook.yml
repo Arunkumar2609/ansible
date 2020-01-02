@@ -2,6 +2,7 @@
 - hosts: all
   gather_facts: false
   connection: "{{ ansible_connection }}"
+  network_os: "{{ ansible_network_os }}
 
   tasks:
     - name: show run
