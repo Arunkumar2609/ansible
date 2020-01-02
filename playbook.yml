@@ -1,20 +1,15 @@
 ---
-- hosts: all
-  gather_facts: false
+
+- name: Network Getting Started First Playbook Extended
   connection: "{{ ansible_connection }}"
+  gather_facts: false
+  hosts: all
   
   tasks:
-    - name: show run
-      ios_command:
-        commands:
-          - show run
-        host: "{{ ansible_host }}"
-        username: "{{ ansible_user }}"
-        password: "{{ ansible_ssh_pass }}"
-        register: config
-
-
-    - name: save output to /ansible/backups
-      copy: 
-        content: "{{ config.stdout[0] }}"
-        dest: "/ansible/backups/show_run_{{ inventory_hostname }}.txt"
+    - name: Get config for IOS devices
+      ios_facts:
+        gather_subset: all
+    - name: Display the config
+      debug:
+        msg: "The hostname is {{ ansible_net_hostname }} and the OS is {{ ansible_net_version }}"
+  
